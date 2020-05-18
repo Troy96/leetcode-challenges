@@ -34,7 +34,7 @@ string defangIPaddr(string address)
     for (int i = 0; i < address.length(); i++)
     {
         char c = address[i];
-        (c == '.') ? ans = ans + "[.]":  ans += c;
+        (c == '.') ? ans = ans + "[.]" : ans += c;
     }
     return ans;
 }
