@@ -4,13 +4,11 @@
 
 // Input: [1,2,3]
 // Output: 6
- 
 
 // Example 2:
 
 // Input: [1,2,3,4]
 // Output: 24
- 
 
 // Note:
 
@@ -21,20 +19,18 @@
 #include <vector>
 using namespace std;
 
-int maximumProduct(vector<int>& nums);
+int maximumProduct(vector<int> &nums);
 
-int main(){
-    vector<int> vect {1,2,3,4};
+int main()
+{
+    vector<int> vect{1, 2, 3, 4};
     cout << maximumProduct(vect);
     return 0;
 }
 
-int maximumProduct(vector<int>& nums) {
-        sort(nums.begin(), nums.end(), greater<int>());
-
-        int product = 1;
-
-        product = nums[0] * nums[1] * nums[2];
-
-        return product;
+int maximumProduct(vector<int> &nums)
+{
+    sort(nums.begin(), nums.end(), greater<int>());
+    int n = nums.size();
+    return max(nums[0] * nums[1] * nums[2], nums[0] * nums[n - 1] * nums[n - 2]);
 }
