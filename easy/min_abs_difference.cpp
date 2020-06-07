@@ -39,17 +39,18 @@ int main(){
 }
 
 vector<vector<int>> minimumAbsDifference(vector<int>& arr) {
+        
         vector<vector<int>> result;
         sort(arr.begin(), arr.end());
 
         int diff = INT_MAX;
 
         for(int i = 1; i< arr.size();i++) {
-            diff = min(diff, arr[]);
+            diff = min(diff, arr[i] - arr[i-1]);
         }
 
         for(int i = 0;i < arr.size() - 1; i++) {
-            if(arr[i+1] > arr[i] && arr[i+1] - arr[i] == diff) {
+            if(arr[i+1] - arr[i] == diff) {
                    vector<int>pairEl{arr[i], arr[i+1]};
                    result.push_back(pairEl);
             }
