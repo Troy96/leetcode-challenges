@@ -15,37 +15,33 @@
 
 #include <iostream>
 #include <vector>
-#include <map>
+#include <unordered_map>
 
 using namespace std;
 
 int singleNumber(vector<int> &nums);
 
 int main()
-{
+{   vector<int>vect{2,2,1};
+cout << singleNumber(vect);
     return 0;
 }
 
 int singleNumber(vector<int> &nums)
 {
-    map<int, int> numHash;
-    map<int, int>::iterator mapItr;
+    unordered_map<int, int> numHash;
     int res;
 
     for (int i = 0; i < nums.size(); i++)
     {
-        mapItr = numHash.find(i);
-        numHash.insert(pair<int, int>(i, mapItr->second + 1));
+        numHash[nums[i]]++;
     }
 
-    for (int i = 0; i < nums.size(); i++)
+    for (auto num : numHash)
     {
-        mapItr = numHash.find(i);
-        if (mapItr->second == 1)
-        {
-            res = i;
-            break;
-        }
+      if(num.second == 1) {
+          return res = num.first;
+      }
     }
 
     return res;
