@@ -36,7 +36,8 @@ int main()
 int maxNumberOfBalloons(string text)
 {
     unordered_map<char, int> baloon_map;
-
+    
     for(char c: text) baloon_map[c]++;
+    
     return min({baloon_map['b'], baloon_map['a'], baloon_map['l']/ 2, baloon_map['o'] /2, baloon_map['n']});
 }
