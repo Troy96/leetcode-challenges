@@ -76,7 +76,8 @@ bool isValid(string s)
             if (ch == '(' || ch == '{')
                 return false;
             break;
-    }}
+        }
+    }
 
     return st.empty();
 }
