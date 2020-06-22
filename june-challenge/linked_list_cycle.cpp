@@ -46,7 +46,7 @@ bool hasCycle(ListNode *head)
     ListNode *slowPtr = head;
     ListNode *fastPtr = head->next;
 
-    while(*fastPtr && *fastPtr->next) {
+    while(fastPtr && fastPtr->next) {
         if(slowPtr == fastPtr) {
             return true;
         }
